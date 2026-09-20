@@ -9,6 +9,8 @@ build/
 
 # Scratch & extracted text files
 *.txt
+/*.pdf
+/LinkedIn Profile Picture.png
 
 # Logs
 npm-debug.log*

@@ -22,8 +22,7 @@ export const PERSONAL_INFO = {
   heroHeadline: "Engineering Safer, More Reliable Industrial Operations.",
   heroSubheadline: "Where Asset Integrity, Process Safety and Operational Excellence Meet.",
   narrativeLead: "Senior engineering authority with 19+ years of progressive leadership across oil & gas, petrochemical, and fertilizer environments. Combines high-consequence risk governance with enterprise asset performance to protect capital, safeguard people, and ensure operational resilience.",
-  cvDownloadLink: "/Nurul_Nazleen_Suhairi_CV.pdf",
-  atsResumeLink: "/Nurul_Nazleen_Suhairi_ATS_Resume.pdf"
+  cvDownloadLink: "/Nurul_Nazleen_Suhairi_CV.pdf"
 };
 
 export const EXECUTIVE_METRICS: MetricItem[] = [

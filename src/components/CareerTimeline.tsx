@@ -16,26 +16,42 @@ export const CareerTimeline: React.FC = () => {
     }));
   };
 
+  // Distinct non-repeated sector images for each career phase
   const getRoleSectorImage = (id: string) => {
     if (id.startsWith('bfi')) {
       return {
         src: '/fertilizer_complex.jpg',
-        label: 'Mega-Scale Ammonia & Urea Fertilizer Complex (SPARK, Brunei)'
+        label: 'Mega-Scale Ammonia & Urea Complex — Brunei Fertilizer Industries (SPARK)'
       };
-    } else if (id.startsWith('petronas')) {
+    } else if (id.startsWith('petronas-culture')) {
       return {
-        src: '/petrochemical_facility.jpg',
-        label: 'Global Energy & Petrochemical Operations (Malaysia)'
+        src: '/refining_zone.jpg',
+        label: 'Enterprise Process Safety Leadership & Culture — PETRONAS Group Operations'
       };
-    } else if (id.startsWith('abf')) {
+    } else if (id.startsWith('petronas-risk')) {
       return {
-        src: '/fertilizer_complex.jpg',
-        label: 'Ammonia Synthesis & Chemical Operations (Bintulu, Sarawak)'
+        src: '/distillation_columns.jpg',
+        label: 'Process Safety Risk Management & Multi-Year Zero Fire Integrity — PETRONAS'
+      };
+    } else if (id.startsWith('abf-env')) {
+      return {
+        src: '/coastal_jetty.jpg',
+        label: 'Scheduled Waste & Environmental Governance (CePSWaM) — ASEAN Bintulu Fertilizer'
+      };
+    } else if (id.startsWith('abf-psm')) {
+      return {
+        src: '/synthesis_loop.jpg',
+        label: 'Ammonia Plant Process Safety & Hazard Identification — ASEAN Bintulu Fertilizer'
+      };
+    } else if (id.startsWith('abf-process')) {
+      return {
+        src: '/urea_towers.jpg',
+        label: 'Process Engineering & Equipment Performance Optimization — Ammonia Plant'
       };
     } else {
       return {
-        src: '/control_room.jpg',
-        label: 'Gas Processing & Commissioning Turnaround (Kerteh, Terengganu)'
+        src: '/pipe_rack.jpg',
+        label: 'Gas Processing Joint Integrity & Zero-Leak Turnaround — PETRONAS Gas Berhad'
       };
     }
   };
@@ -140,20 +156,20 @@ export const CareerTimeline: React.FC = () => {
                   {isExpanded && (
                     <div className="px-6 pb-6 pt-2 border-t border-white/5 space-y-5 text-left">
                       
-                      {/* Sector Photography Strip for this role */}
-                      <div className="relative w-full h-36 sm:h-44 rounded-xl overflow-hidden border border-white/10">
+                      {/* Distinct Sector Photography Strip for this role */}
+                      <div className="relative w-full h-36 sm:h-44 rounded-xl overflow-hidden border border-white/10 shadow-md group">
                         <img
                           src={sectorMedia.src}
                           alt={role.company}
-                          className="w-full h-full object-cover object-center filter brightness-90 contrast-110"
+                          className="w-full h-full object-cover object-center filter brightness-90 contrast-110 group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent" />
-                        <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-steel-200 bg-obsidian-950/80 px-2.5 py-1 rounded border border-white/10 backdrop-blur-sm">
+                        <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-steel-200 bg-obsidian-950/85 px-3 py-1.5 rounded-lg border border-white/10 backdrop-blur-sm">
                           <span className="flex items-center gap-1.5 truncate">
-                            <Factory className="w-3 h-3 text-signal-amber" />
-                            {sectorMedia.label}
+                            <Factory className="w-3 h-3 text-signal-amber shrink-0" />
+                            <span className="truncate">{sectorMedia.label}</span>
                           </span>
-                          <span className="text-signal-cyan shrink-0 font-semibold">VERIFIED</span>
+                          <span className="text-signal-cyan shrink-0 ml-2 font-semibold">VERIFIED RECORD</span>
                         </div>
                       </div>
 

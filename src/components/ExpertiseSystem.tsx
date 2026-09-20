@@ -28,41 +28,42 @@ export const ExpertiseSystem: React.FC = () => {
     }
   };
 
+  // 6 unique non-repeated sector images
   const getSectorImageForDomain = (id: string) => {
     switch (id) {
       case 'asset-integrity':
         return {
-          src: '/fertilizer_complex.jpg',
-          caption: 'Ammonia & Fertilizer Mechanical Integrity — High-Pressure Synthesis Loops'
+          src: '/urea_towers.jpg',
+          caption: 'High-Elevation Urea Prilling Towers & Mechanical Structure Inspection'
         };
       case 'process-safety':
         return {
-          src: '/petrochemical_facility.jpg',
-          caption: 'Petrochemical & Gas Fractionation — Major Hazard Loss Prevention'
+          src: '/distillation_columns.jpg',
+          caption: 'High-Temperature Hydrocarbon Fractionation & Quantitative Risk Assessment'
         };
       case 'technical-governance':
         return {
-          src: '/control_room.jpg',
-          caption: 'Control Room Engineering Assurance & Management of Change Telemetry'
+          src: '/engineer_console.jpg',
+          caption: 'Senior Engineering Console — Technical Authority & MOC Verification'
         };
       case 'operational-excellence':
         return {
-          src: '/fertilizer_complex.jpg',
-          caption: 'Mega-Scale Manufacturing Complex — Continuous +12% OEE Optimization'
+          src: '/synthesis_loop.jpg',
+          caption: 'Ammonia Synthesis Loop Reactant Loops & Continuous OEE Acceleration'
         };
       case 'digital-risk':
         return {
-          src: '/control_room.jpg',
-          caption: 'Frontline-to-Boardroom Dynamic Process Safety Dashboards'
+          src: '/scada_monitors.jpg',
+          caption: 'SCADA Dynamic Barrier Wall — Real-Time Telemetry & SCE Degradation Tracking'
         };
       case 'leadership':
         return {
-          src: '/petrochemical_facility.jpg',
-          caption: 'Multinational Energy & Petrochemical Technical Mentorship (CIMAH/TPCP)'
+          src: '/refining_zone.jpg',
+          caption: 'Mega-Complex Refining Infrastructure & Multinational Engineering Mentorship'
         };
       default:
         return {
-          src: '/fertilizer_complex.jpg',
+          src: '/urea_towers.jpg',
           caption: 'Industrial Energy Infrastructure'
         };
     }
@@ -71,7 +72,7 @@ export const ExpertiseSystem: React.FC = () => {
   const activeSectorImg = getSectorImageForDomain(activeCategory.id);
 
   return (
-    <section id="expertise" className="relative py-24 bg-obsidian-900/60 border-t border-white/10">
+    <section id="expertise" className="relative py-24 bg-obsidian-900/60 border-t border-white/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -170,17 +171,17 @@ export const ExpertiseSystem: React.FC = () => {
                 </div>
               </div>
 
-              {/* Sector Photo Feature for the Domain */}
-              <div className="relative w-full h-44 sm:h-52 rounded-xl overflow-hidden border border-white/10 shadow-lg group">
+              {/* Unique Sector Photo Feature for the Domain */}
+              <div className="relative w-full h-44 sm:h-56 rounded-xl overflow-hidden border border-white/10 shadow-lg group">
                 <img
                   src={activeSectorImg.src}
                   alt={activeCategory.title}
                   className="w-full h-full object-cover object-center filter brightness-90 contrast-115 group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-steel-200 bg-obsidian-950/80 px-3 py-1.5 rounded-lg border border-white/10 backdrop-blur-sm">
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-steel-200 bg-obsidian-950/85 px-3 py-1.5 rounded-lg border border-white/10 backdrop-blur-sm">
                   <span className="truncate">{activeSectorImg.caption}</span>
-                  <span className="text-signal-cyan shrink-0 ml-2 font-semibold">SECTOR VERIFIED</span>
+                  <span className="text-signal-cyan shrink-0 ml-2 font-semibold">AUTHENTIC SECTOR VIEW</span>
                 </div>
               </div>
 
