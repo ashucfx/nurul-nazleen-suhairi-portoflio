@@ -40,11 +40,3 @@ npm run build
 # Preview production bundle locally
 npm run preview
 ```
-
----
-
-### Confidentiality & Inquiries
-Direct corporate inquiries, technical authority evaluations, and keynote engagements:
-- **Email**: `nurul.nazleen.suhairi@gmail.com`
-- **LinkedIn**: [linkedin.com/in/nurul-nazleen-suhairi](https://www.linkedin.com/in/nurul-nazleen-suhairi/)
-- **Headquarters**: Brunei Fertilizer Industries Sdn Bhd, Sungai Liang Industrial Park (SPARK), Brunei Darussalam & Kuala Lumpur, Malaysia.

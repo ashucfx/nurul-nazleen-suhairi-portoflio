@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { X, Download, FileText, ExternalLink, CheckCircle2, Shield } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -8,17 +8,10 @@ interface CVModalProps {
 }
 
 export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
-  const [activeDoc, setActiveDoc] = useState<'cv' | 'ats'>('cv');
-
   if (!isOpen) return null;
 
-  const currentFile = activeDoc === 'cv' 
-    ? PERSONAL_INFO.cvDownloadLink 
-    : PERSONAL_INFO.atsResumeLink;
-
-  const currentTitle = activeDoc === 'cv'
-    ? 'Comprehensive Executive Curriculum Vitae (CV)'
-    : 'ATS-Optimized Engineering Resume';
+  const currentFile = PERSONAL_INFO.cvDownloadLink;
+  const currentTitle = 'Official Executive Curriculum Vitae (CV)';
 
   return (
     <div
@@ -41,11 +34,11 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
                   {currentTitle}
                 </h3>
                 <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 font-bold">
-                  <CheckCircle2 className="w-3 h-3" /> VERIFIED DOSSIER
+                  <CheckCircle2 className="w-3 h-3" /> VERIFIED EXECUTIVE DOSSIER
                 </span>
               </div>
               <div className="text-[11px] font-mono text-steel-400">
-                Nurul Nazleen Suhairi • Brunei Fertilizer Industries & Ex-PETRONAS
+                Nurul Nazleen Suhairi • Senior Manager, Asset Integrity • Brunei Fertilizer Industries
               </div>
             </div>
           </div>
@@ -54,12 +47,12 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
             {/* Direct Download Button */}
             <a
               href={currentFile}
-              download
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold tracking-wider text-obsidian-950 bg-steel-100 hover:bg-white transition-all shadow-sm"
-              title="Download PDF to device"
+              download="Nurul_Nazleen_Suhairi_CV.pdf"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-mono font-semibold tracking-wider text-obsidian-950 bg-steel-100 hover:bg-white transition-all shadow-sm active:scale-98"
+              title="Download Executive CV"
             >
               <Download className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">DOWNLOAD PDF</span>
+              <span>DOWNLOAD EXECUTIVE CV</span>
             </a>
 
             {/* Open in new tab */}
@@ -67,7 +60,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
               href={currentFile}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-lg bg-obsidian-800 border border-white/10 text-steel-400 hover:text-white transition-colors"
+              className="p-2 rounded-lg bg-obsidian-800 border border-white/10 text-steel-400 hover:text-white transition-colors"
               title="Open PDF in new browser tab"
               aria-label="Open PDF in new tab"
             >
@@ -77,7 +70,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
             {/* Close modal */}
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg bg-obsidian-800 border border-white/10 text-steel-400 hover:text-white transition-colors"
+              className="p-2 rounded-lg bg-obsidian-800 border border-white/10 text-steel-400 hover:text-white transition-colors"
               aria-label="Close CV viewer"
             >
               <X className="w-5 h-5" />
@@ -85,34 +78,15 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        {/* Document Selection Tabs */}
-        <div className="px-4 py-2 bg-obsidian-950 border-b border-white/5 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setActiveDoc('cv')}
-              className={`px-3 py-1 rounded text-xs font-mono tracking-wider transition-all ${
-                activeDoc === 'cv'
-                  ? 'bg-obsidian-800 text-signal-cyan font-bold border border-white/10'
-                  : 'text-steel-400 hover:text-white'
-              }`}
-            >
-              EXECUTIVE CV (3 PAGES)
-            </button>
-            <button
-              onClick={() => setActiveDoc('ats')}
-              className={`px-3 py-1 rounded text-xs font-mono tracking-wider transition-all ${
-                activeDoc === 'ats'
-                  ? 'bg-obsidian-800 text-signal-cyan font-bold border border-white/10'
-                  : 'text-steel-400 hover:text-white'
-              }`}
-            >
-              ATS RESUME (2 PAGES)
-            </button>
+        {/* Sub-header Ribbon */}
+        <div className="px-5 py-2 bg-obsidian-950 border-b border-white/5 flex items-center justify-between shrink-0">
+          <div className="flex items-center gap-2 text-xs font-mono text-signal-cyan font-bold">
+            <span>OFFICIAL EXECUTIVE CURRICULUM VITAE</span>
           </div>
 
           <div className="hidden sm:flex items-center gap-2 text-[11px] font-mono text-steel-400">
             <Shield className="w-3.5 h-3.5 text-signal-amber" />
-            <span>ORIGINAL SOURCE-OF-TRUTH DOCUMENTS</span>
+            <span>ORIGINAL SOURCE-OF-TRUTH DOCUMENT</span>
           </div>
         </div>
 
