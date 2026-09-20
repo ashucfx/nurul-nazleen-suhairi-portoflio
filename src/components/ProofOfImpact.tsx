@@ -20,21 +20,26 @@ export const ProofOfImpact: React.FC = () => {
     }
   };
 
+  // 5 completely distinct non-repeated sector images
   const getCardSectorBg = (id: string) => {
     switch (id) {
       case 'impact-oee':
-        return '/fertilizer_complex.jpg';
+        return '/urea_towers.jpg';
       case 'impact-fires':
-        return '/petrochemical_facility.jpg';
+        return '/refining_zone.jpg';
       case 'impact-dashboards':
-        return '/control_room.jpg';
+        return '/scada_monitors.jpg';
+      case 'impact-authority':
+        return '/pipe_rack.jpg';
+      case 'impact-mentorship':
+        return '/engineer_console.jpg';
       default:
-        return null;
+        return '/fertilizer_complex.jpg';
     }
   };
 
   return (
-    <section id="impact" className="relative py-24 bg-obsidian-900/60 border-t border-white/10">
+    <section id="impact" className="relative py-24 bg-obsidian-900/60 border-t border-white/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -48,11 +53,11 @@ export const ProofOfImpact: React.FC = () => {
             </h2>
           </div>
           <p className="font-mono text-xs text-steel-400 max-w-md">
-            Rigorous operational proof points establishing double-digit OEE expansion, major hazard prevention, and institutional capability in energy and fertilizer operations.
+            Rigorous operational proof points establishing double-digit OEE expansion, major hazard prevention, and institutional capability across authentic industrial environments.
           </p>
         </div>
 
-        {/* 5 Editorial Impact Cards with authentic sector imagery */}
+        {/* 5 Editorial Impact Cards with distinct authentic sector imagery */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {IMPACT_CARDS.map((card, idx) => {
             const bgImage = getCardSectorBg(card.id);
@@ -63,17 +68,15 @@ export const ProofOfImpact: React.FC = () => {
                   idx === 0 ? 'md:col-span-2 lg:col-span-2' : ''
                 }`}
               >
-                {/* Sector Background Image if available */}
-                {bgImage && (
-                  <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                    <img
-                      src={bgImage}
-                      alt={card.title}
-                      className="w-full h-full object-cover object-center opacity-15 filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/90 to-obsidian-950/80" />
-                  </div>
-                )}
+                {/* Sector Background Image */}
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                  <img
+                    src={bgImage}
+                    alt={card.title}
+                    className="w-full h-full object-cover object-center opacity-20 filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/90 to-obsidian-950/80" />
+                </div>
 
                 {/* Subtle accent corner glow */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-signal-cyan/5 rounded-bl-full group-hover:bg-signal-cyan/10 transition-colors pointer-events-none z-10" />

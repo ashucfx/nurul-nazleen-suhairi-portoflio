@@ -1,6 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#07090e" stroke="#1f2838" stroke-width="2"/>
-  <circle cx="32" cy="32" r="22" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/>
-  <path d="M22 44V20L32 34L42 20V44" stroke="#f1f5f9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="32" cy="34" r="2.5" fill="#f59e0b" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Exact site gradient: Signal Cyan & Cyan Light -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <!-- Exact site gradient: Signal Gold & Amber -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Obsidian-950 Background with Obsidian-800 border and subtle Signal-Cyan border stroke -->
+  <rect width="64" height="64" rx="14" fill="#040608" stroke="#141a27" stroke-width="2"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#cyanGrad)" stroke-width="1" opacity="0.4"/>
+
+  <!-- Concentric Asset Integrity Ring: Signal Cyan with dashed cadence -->
+  <circle cx="32" cy="32" r="22" stroke="url(#cyanGrad)" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+
+  <!-- Unmistakable Capital "N" for Nurul Nazleen Suhairi in Steel-100 and Signal Cyan -->
+  <!-- Left stem: (21,46) to (21,18) | Diagonal: (21,18) to (43,46) | Right stem: (43,46) to (43,18) -->
+  <path d="M21 46V18L43 46V18" stroke="#040608" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <path d="M21 46V18L43 46V18" stroke="#f1f5f9" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21 46V18L43 46V18" stroke="url(#cyanGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#cyanGlow)" opacity="0.9"/>
+
+  <!-- Signal Gold/Amber Integrity Sentinel Dot at Center Node -->
+  <circle cx="32" cy="32" r="2.8" fill="url(#goldGrad)"/>
 </svg>
